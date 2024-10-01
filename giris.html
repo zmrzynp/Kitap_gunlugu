@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yapın</title>
+    <link rel="stylesheet" href="/static/css/giris.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <h1>Giriş Yapın</h1>
+            <img src="{{ url_for('static', filename='image/otururken_kitap_okuyan_insanlar.jpg') }}" alt="Resim">
+
+        </div>
+        <div class="right-section">
+            {% block content %}
+            <form action="{{ url_for('giris') }}" method="POST">
+                <label for="gmail">GMAIL</label>
+                <input type="email" id="gmail" name="gmail" placeholder="Gmail adresinizi girin...">
+                
+                <label for="kullanici_adi">KULLANICI ADI</label>
+                <input type="text" id="kullanici_adi" name="kullanici_adi" placeholder="Kullanıcı adınızı girin...">
+                
+                <label for="sifre">ŞİFRE</label>
+                <input type="password" id="sifre" name="sifre" placeholder="Şifrenizi girin...">
+                
+                <button type="submit">Giriş Yap</button>
+
+                {% endfor %}
+            </form>
+        </div>
+    </div>
+</body>
+</html>
